@@ -1,0 +1,14 @@
+com\pokedexmanager\middleware\controller\EvolutionController.class
+com\pokedexmanager\middleware\repository\EvolutionRepository.class
+com\pokedexmanager\middleware\entity\StatsConverter.class
+com\pokedexmanager\middleware\entity\User.class
+com\pokedexmanager\middleware\entity\Evolution.class
+com\pokedexmanager\middleware\controller\CollectionController.class
+com\pokedexmanager\middleware\entity\Pokemon.class
+com\pokedexmanager\middleware\entity\CollectionStatus.class
+com\pokedexmanager\middleware\repository\PokemonRepository.class
+com\pokedexmanager\middleware\config\SecurityConfig.class
+com\pokedexmanager\middleware\controller\PokemonController.class
+com\pokedexmanager\middleware\repository\UserCollectionsRepository.class
+com\pokedexmanager\middleware\PokedexMiddlewareApplication.class
+com\pokedexmanager\middleware\entity\UserCollection.class

@@ -1,0 +1,14 @@
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\config\SecurityConfig.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\controller\CollectionController.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\controller\EvolutionController.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\controller\PokemonController.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\CollectionStatus.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\Evolution.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\Pokemon.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\StatsConverter.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\User.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\entity\UserCollection.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\PokedexMiddlewareApplication.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\repository\EvolutionRepository.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\repository\PokemonRepository.java
+C:\Users\gparl\Documents\BRIEF1\pokedex-manager\backend\middleware\src\main\java\com\pokedexmanager\middleware\repository\UserCollectionsRepository.java
