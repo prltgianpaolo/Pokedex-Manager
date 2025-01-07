@@ -11,7 +11,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8080/api/auth/login', { username, password });
-            localStorage.setItem('token', response.data); // Salva il token JWT
+            localStorage.setItem('token', response.data); 
             navigate('/');
         } catch (error) {
             alert('Invalid credentials');

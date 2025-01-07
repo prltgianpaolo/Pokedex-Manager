@@ -13,11 +13,11 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Consenti tutte le rotte
-                        .allowedOrigins("http://localhost:3000") // Consenti richieste dal frontend React
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Consenti metodi HTTP
-                        .allowedHeaders("*") // Consenti tutti gli header
-                        .allowCredentials(true); // Consenti cookie e credenziali
+                registry.addMapping("/**") // Consente tutte le rotte
+                        .allowedOrigins("http://localhost:3000") // Consente richieste dal frontend React
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Consente metodi HTTP
+                        .allowedHeaders("*") // Consente tutti gli header
+                        .allowCredentials(true); // Consente cookie e credenziali
             }
         };
     }

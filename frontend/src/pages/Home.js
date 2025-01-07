@@ -11,13 +11,13 @@ const Home = () => {
     // Controlla se l'utente è autenticato
     useEffect(() => {
         const token = localStorage.getItem('token');
-        setIsAuthenticated(!!token); // Imposta true se il token esiste, altrimenti false
+        setIsAuthenticated(!!token); 
     }, []);
 
     // Funzione per il logout
     const handleLogout = () => {
-        localStorage.removeItem('token'); // Rimuove il token dal localStorage
-        setIsAuthenticated(false); // Aggiorna lo stato
+        localStorage.removeItem('token'); 
+        setIsAuthenticated(false); 
         alert('You have been logged out.');
     };
 
@@ -73,69 +73,89 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container mt-4">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <h1>Pokémon List</h1>
+        <div
+        className="min-h-screen py-6"
+        style={{
+            backgroundImage: 'url("/pokeball.png")',
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px',
+            backgroundColor: '#f8f8f8',
+            }}
+        >
+            
+            <div className="container mx-auto bg-white p-6 rounded shadow-lg relative text-center mb-10 max-w-4xl">
+                 <h1 className="text-5xl font-bold text-red-600">Pokémon List</h1>
                 {isAuthenticated && (
-                    <button className="btn btn-danger" onClick={handleLogout}>
-                        Logout
-                    </button>
-                )}
-            </div>
+                    <button
+                        className="absolute top-4 right-4 bg-blue-500 text-white px-6 py-2 rounded shadow hover:bg-blue-600 transition"
+                        onClick={handleLogout}
+                >
+                    Logout
+                </button>
+            )}
+        </div>
 
-            {/* Barra di ricerca e filtri */}
-            <div className="row mb-4">
-                <div className="col-md-3">
+
+            {/* Barra di ricerca */}
+            <div className="container mx-auto bg-white p-6 rounded shadow-lg mb-10 max-w-4xl">
+                <div className="grid grid-cols-4 gap-4">
                     <input
                         type="text"
-                        className="form-control"
+                        className="border border-gray-300 rounded p-2 focus:ring focus:ring-red-300"
                         placeholder="Name"
                         onChange={(e) => setFilters({ ...filters, name: e.target.value })}
                     />
-                </div>
-                <div className="col-md-3">
                     <input
                         type="text"
-                        className="form-control"
+                        className="border border-gray-300 rounded p-2 focus:ring focus:ring-red-300"
                         placeholder="Type"
                         onChange={(e) => setFilters({ ...filters, type: e.target.value })}
                     />
-                </div>
-                <div className="col-md-3">
                     <input
                         type="number"
-                        className="form-control"
+                        className="border border-gray-300 rounded p-2 focus:ring focus:ring-red-300"
                         placeholder="Generation"
                         onChange={(e) => setFilters({ ...filters, generation: e.target.value })}
                     />
-                </div>
-                <div className="col-md-3">
-                    <button className="btn btn-primary" onClick={handleSearch}>
+                    <button
+                        className="bg-red-500 text-white px-4 py-2 rounded shadow hover:bg-red-600 transition"
+                        onClick={handleSearch}
+                    >
                         Search
                     </button>
                 </div>
             </div>
 
             {/* Lista dei Pokémon */}
-            <div className="row">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {pokemon.map((poke) => (
-                    <div key={poke.id} className="col-md-3">
-                        <div className="card">
-                            <img src={poke.imageUrl} className="card-img-top" alt={poke.name} />
-                            <div className="card-body">
-                                <h5 className="card-title">{poke.name}</h5>
-                                {isAuthenticated && (
-                                    <button
-                                        onClick={() => addToCollection(poke.id)}
-                                        className="btn btn-success"
-                                    >
-                                        Add to My Collection
-                                    </button>
-                                )}
-                                <Link to={`/pokemon/${poke.id}`} className="btn btn-primary ms-2">
-                                    Details
-                                </Link>
-                            </div>
+                    <div
+                        key={poke.id}
+                        className="bg-white border border-gray-300 rounded-lg shadow hover:shadow-lg transition"
+                    >
+                        <div className="h-48 w-full overflow-hidden rounded-t-lg flex items-center justify-center bg-gray-200">
+                            <img
+                                src={poke.imageUrl}
+                                alt={poke.name}
+                                className="object-contain w-full h-full"
+                            />
+                        </div>
+                        <div className="p-4">
+                            <h5 className="text-lg font-semibold text-red-600">{poke.name}</h5>
+                            {isAuthenticated && (
+                                <button
+                                    onClick={() => addToCollection(poke.id)}
+                                    className="bg-red-500 text-white px-4 py-2 mt-2 rounded shadow hover:bg-red-600 transition"
+                                >
+                                    Add to My Collection
+                                </button>
+                            )}
+                            <Link
+                                to={`/pokemon/${poke.id}`}
+                                className="block bg-red-500 text-white px-4 py-2 mt-2 rounded shadow hover:bg-red-600 transition"
+                            >
+                                Details
+                            </Link>
                         </div>
                     </div>
                 ))}

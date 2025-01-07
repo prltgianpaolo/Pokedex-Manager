@@ -23,11 +23,9 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
-        // Controllo se l'username esiste già
         if (userService.findByUsername(user.getUsername()) != null) {
             return ResponseEntity.badRequest().body("Username already exists");
         }
-        // Passa l'utente al servizio senza codificare la password
         userService.registerUser(user);
         return ResponseEntity.ok("User registered successfully");
     }

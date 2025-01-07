@@ -53,7 +53,7 @@ const MyCollection = () => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             alert('Pokémon removed from your collection!');
-            fetchCollection(); // Ricarica la collezione aggiornata
+            fetchCollection(); 
         } catch (error) {
             console.error('Error removing Pokémon:', error);
             alert('Failed to remove Pokémon from collection.');
@@ -65,23 +65,23 @@ const MyCollection = () => {
     }, []);
 
     return (
-        <div className="container mt-4">
-            <h1>My Collection</h1>
+        <div className="container mt-5">
+            <h1 className="text-center text-3xl font-bold text-red-600 mb-6">My Pokémon Collection</h1>
 
             {/* Lista della collezione */}
             <div className="row">
                 {collection.length === 0 ? (
-                    <p>Your collection is empty.</p>
+                    <p className="text-center text-gray-500">Your collection is empty.</p>
                 ) : (
                     collection.map((poke) => {
                         const details = pokemonDetails[poke.pokemonId];
                         return (
                             <div key={poke.pokemonId} className="col-md-6">
-                                <div className="card mb-4">
+                                <div className="card shadow-lg mb-4 hover:shadow-xl transition-transform transform hover:scale-105">
                                     {details ? (
                                         <>
                                             <div className="row g-0">
-                                                <div className="col-md-4">
+                                                <div className="col-md-4 bg-gray-100 flex items-center justify-center">
                                                     <img
                                                         src={details.imageUrl}
                                                         className="img-fluid rounded-start"
@@ -90,23 +90,33 @@ const MyCollection = () => {
                                                 </div>
                                                 <div className="col-md-8">
                                                     <div className="card-body">
-                                                        <h5 className="card-title">{details.name}</h5>
-                                                        <p>Type 1: {details.type1}</p>
-                                                        <p>Type 2: {details.type2 || 'None'}</p>
-                                                        <p>Generation: {details.generation}</p>
-                                                        <h6>Statistics:</h6>
-                                                        <ul>
+                                                        <h5 className="card-title text-xl font-bold text-gray-800 mb-2">
+                                                            {details.name}
+                                                        </h5>
+                                                        <p className="text-gray-600 mb-1">
+                                                            <strong>Type 1:</strong> {details.type1}
+                                                        </p>
+                                                        <p className="text-gray-600 mb-1">
+                                                            <strong>Type 2:</strong> {details.type2 || 'None'}
+                                                        </p>
+                                                        <p className="text-gray-600 mb-3">
+                                                            <strong>Generation:</strong> {details.generation}
+                                                        </p>
+                                                        <h6 className="font-bold text-gray-800 mb-2">Statistics:</h6>
+                                                        <ul className="list-disc ml-5 text-gray-600">
                                                             <li>HP: {details.stats.hp}</li>
                                                             <li>Attack: {details.stats.attack}</li>
                                                             <li>Defense: {details.stats.defense}</li>
                                                             <li>Speed: {details.stats.speed}</li>
                                                         </ul>
-                                                        <p>Status: {poke.status}</p>
+                                                        <p className="text-gray-600 mt-3">
+                                                            <strong>Status:</strong> {poke.status}
+                                                        </p>
                                                         <button
-                                                            className="btn btn-danger"
+                                                            className="btn btn-danger mt-3 w-100"
                                                             onClick={() => removeFromCollection(poke.pokemonId)}
                                                         >
-                                                            Remove
+                                                            Remove from Collection
                                                         </button>
                                                     </div>
                                                 </div>

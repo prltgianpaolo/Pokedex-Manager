@@ -18,7 +18,7 @@ const Register = () => {
                 email,
             });
             alert('Registration successful! You can now log in.');
-            navigate('/login'); // Reindirizza alla pagina di login
+            navigate('/login');
         } catch (err) {
             console.error('Error during registration:', err);
             setError('Failed to register. Please check your details and try again.');
